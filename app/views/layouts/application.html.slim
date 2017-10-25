@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title
+      | Mark Kim
+    = csrf_meta_tags
+    link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"]
+    script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"]
+    link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"]
+    link[href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"]
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    .navbar-fixed
+      nav.blue-grey.lighten-4
+        .nav-wrapper
+          ul#slide-out.side-nav.fixed
+            li.user-view
+                .background
+                  = image_tag("swirl.jpg", alt: "Sagrada", size: '245x120')
+                a.waves-light.waves-effect href="#connect"
+                  span.white-text.name.pad-l-1
+                    | Mark Kim
+                a.waves-light.waves-effect href="#connect"
+                  span.white-text.email.pad-l-1 mark.jn.kim@gmail.com
+            li: a.waves-light.waves-effect href="#profile"
+                i.material-icons person
+                | Profile
+            li: a.waves-light.waves-effect href="#projects"
+                i.material-icons assignment
+                | Projects
+            li: a.waves-light.waves-effect href="#experience"
+                i.material-icons history
+                | Experience
+            li: a.waves-light.waves-effect[href="#technology"]
+                i.material-icons important_devices
+                | Technology
+            li: a.waves-light.waves-effect[href="#education"]
+                i.material-icons school
+                | Education
+            li: a.waves-light.waves-effect[href="#connect"]
+                i.material-icons share
+                | Connect
+          a.button-collapse data-activates="slide-out" href="#"
+            i.material-icons menu
+
+    = yield
